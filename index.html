@@ -17,6 +17,15 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            
+            <!-- Add Dark Mode Toggle Here -->
+            <div class="theme-toggle">
+                <button id="darkModeToggle" class="theme-btn">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+            </div>
+            
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -37,25 +46,23 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" style="text-indent: 20px;">
                     <p>
-                        My name is Jayden Yiu and as mentioned before, I am a grade 10 student attending UHS. Since a young age, 
-                        I have loved learning about STEM and have participated in various competitions and clubs to further my 
-                        knowledge and skills. I have many experiences in coding, robotics, and other STEM-related activities.
-                        I am part of the UHS Robotics team, the Markham firebirds robotics team, the UHS Computer Science club, and have 
-                        participated in many STEM related competitions such as the Canadian Computing Competition and the Pascal Math Contest. 
+                        My name is Jayden Yiu, a Grade 10 student at UHS with a strong passion for STEM. I’ve gained experience in coding, robotics, 
+                        and competitions like the Canadian Computing Competition and the Pascal Math Contest. I’m an active member of the UHS Robotics Team,
+                         the Markham Firebirds, and the UHS Computer Science Club.
                     </p>
                     <p>
-                        I am a Canadian immigrant from Hong Kong who has lived in Canada for 4 years. I am fluent in English, Cantonese, and Mandarin.
-                        In my free time, I enjoy playing video games, modding video games, playing the piano, programming websites and applications, and solving coding problems on leetCode.
-                        As mentioned before, I am currently participating in the STEM program at UHS, which includes activities such as robotics, Computer Designing and Computer Science.
-                        I am also a member of the programming part of the UHS Robotics team, where I help make the autonomous routines and other programming related tasks.
-                        I have experience with various programming languages such as Java, Python, C++, HTML/CSS and JavaScript.
+                        I'm a Canadian immigrant from Hong Kong, fluent in English, Cantonese, and Mandarin. I've lived in Canada for four years and 
+                        am currently part of the STEM program at UHS, where I participate in robotics, computer design, and computer science. 
+                        As a member of the UHS Robotics team, I contribute to autonomous routines and other programming tasks. In my free time, 
+                        I enjoy gaming, modding games, playing piano, web/app development, and solving coding challenges on LeetCode. I have experience 
+                        with Java, Python, C++, HTML/CSS, and JavaScript.
                     </p>
-                    <a href="#" class="btn">Download Resume</a>
-                </div>
+                 </div>
                 <div class="about-image">
                     <div class="placeholder-image">Your Photo</div>
+                    <a href="assets/resume.pdf" class="btn" download="Jayden_Yiu_Resume.pdf">Download Resume</a>
                 </div>
             </div>
         </div>
@@ -126,46 +133,42 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2>Contact Us</h2>
         <div class="contact-content">
             <div class="contact-info">
                 <h3>Let's work together!</h3>
-                <p>I'm currently available for freelance work and full-time opportunities. Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                <p>I'm currently available for internship / joint project opportunities. Feel free to reach out if you'd like to collaborate or just say hello!</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
                         <div>
-                            <h4>Email</h4>
-                            <a href="mailto:yourname@email.com">yourname@email.com</a>
+                            <h4>Email 📧</h4>
+                            <a href="mailto:jayden.yiu.cs@gmail.com">jayden.yiu.cs@email.com</a>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">📱</div>
                         <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            <h4>Phone 📱</h4>
+                            <a href="tel:+16473218961">+1 (647) 321 8961</a>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
                         <div>
-                            <h4>Location</h4>
-                            <p>San Francisco, CA</p>
+                            <h4>Location 📍</h4>
+                            <p>Markham, ON</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
-                    <a href="https://twitter.com/yourusername" target="_blank" class="social-link">Twitter</a>
+                    <a href="https://github.com/deathslayer5-dev" target="_blank" class="social-link">GitHub</a>
+                    <a href="https://leetcode.com/u/DeathSlayer5/" target="_blank" class="social-link">LeetCode</a>
                 </div>
             </div>
 
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/xqaywgoa" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -191,13 +194,20 @@
         </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Jayden Yiu. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    <div id="thankYouPopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <button class="close-popup">&times;</button>
+            <div class="popup-icon">🎉</div>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully!</p>
+            <button class="btn popup-close-btn">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script> 
 </body>
 </html>
