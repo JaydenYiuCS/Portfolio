@@ -159,33 +159,25 @@ nav {
     justify-content: center;
     margin: 0 auto;
 }
-.item {
-    border: 2px dashed #000;
-    padding: 10px;
-    border-radius: 20px;
-    background: #f0f0f0;
-}
-
 .skills-grid {
     border: 5px solid #000;
     border-radius: 20px;
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex; /* Keep as flex */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
     gap: 30px;
-}
-
-
-.skill-card {
-    background: white;
     padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    background: white;
 }
 
-.skill-card:hover {
-    transform: translateY(-5px);
+.item {
+    border: 2px dashed #000;
+    padding: 20px;
+    border-radius: 15px;
+    background: #f0f0f0;
+    flex: 1; /* Allow items to grow */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: 350px; /* Maximum width */
 }
 
 /* Projects Section */
