@@ -1,6 +1,7 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
+// Mobile menu functionality
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
@@ -13,6 +14,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -26,6 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
@@ -35,43 +38,29 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Dark Mode Toggle - Enhanced with debugging
+// Dark Mode Toggle
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded - initializing dark mode');
     
     const darkModeToggle = document.getElementById('darkModeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    console.log('Dark mode toggle element:', darkModeToggle);
-    console.log('Prefers dark scheme:', prefersDarkScheme.matches);
-
     // Check for saved theme or preferred scheme
     const savedTheme = localStorage.getItem('theme');
-    console.log('Saved theme:', savedTheme);
-    
     const currentTheme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light');
-    console.log('Current theme to apply:', currentTheme);
 
     // Apply the current theme
     document.documentElement.setAttribute('data-theme', currentTheme);
-    console.log('Applied data-theme:', currentTheme);
 
     // Toggle theme function
     if (darkModeToggle) {
-        console.log('Adding click event to dark mode toggle');
         darkModeToggle.addEventListener('click', function() {
-            console.log('Dark mode toggle clicked');
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            console.log('Changing theme from', currentTheme, 'to', newTheme);
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            console.log('Theme changed and saved');
         });
-    } else {
-        console.error('Dark mode toggle button not found!');
-        console.log('Available elements with ID darkModeToggle:', document.getElementById('darkModeToggle'));
     }
 
     // Listen for system theme changes
@@ -81,4 +70,39 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.setAttribute('data-theme', newTheme);
         }
     });
+
+    // Initialize scroll animations
+    initScrollAnimations();
 });
+
+// Scroll Animation Functionality
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('.scroll-section');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    // Track which sections have been animated
+    const animatedSections = new Set();
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animatedSections.has(entry.target)) {
+                // Add visible class with a slight delay for staggered effect
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                    animatedSections.add(entry.target);
+                }, 100);
+                
+                // Unobserve after animation to prevent re-animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all scroll sections
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}

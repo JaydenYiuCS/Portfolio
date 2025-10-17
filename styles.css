@@ -398,7 +398,7 @@ nav {
     margin-right: auto;
 }
 
-.goals-content {
+.goals-content{
     border: 2px solid #919191;
     border-radius: 20px; /* This will work now with padding */
     display: grid;
@@ -569,7 +569,34 @@ nav {
     min-height: 150px;
     resize: vertical;
 }
+/* Scroll Animation Styles */
+.scroll-section {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease;
+}
 
+.scroll-section.right {
+    transform: translateX(100px);
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-section {
+        transition: none;
+        transform: none;
+    }
+}
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
