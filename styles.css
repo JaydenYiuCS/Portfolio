@@ -12,6 +12,8 @@
     --light-bg: #f8f9fa;
     --card-bg: #ffffff;
     --border-color: #ddd;
+    --special-bg:#f0f0f0;
+    --container-bg:#d1d1d1;
 }
 [data-theme="dark"] {
     --primary-color: #34495e;
@@ -85,6 +87,9 @@
     background-color: var(--special-bg);
 }
 
+[data-theme="dark"] #goals {
+    background-color: var(--container-bg);
+}
 [data-theme="dark"] .about-text {
     border-color: var(--border-color);
     background: var(--card-bg);
@@ -107,7 +112,7 @@
     border-bottom-color: var(--border-color);
 }
 [data-theme="dark"] #projects {
-    background-color: var(--special-bg);
+    background-color: var(--container-bg);
 }
 
 [data-theme="dark"] .project-card {
@@ -332,7 +337,7 @@ nav {
 }
 
 #about {
-    background-color: var(--light-bg);
+    background-color: var(--special-bg);
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
@@ -421,12 +426,12 @@ nav {
 }
 
 #skills {
+    background-color: var(--special-bg);
     padding: 60px 0;
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--container-bg);
 }
 
 #skills .container {
@@ -495,7 +500,7 @@ nav {
 
 /* Projects Section */
 #projects {
-    background-color: var(--special-bg);
+    background-color: var(--container-bg);
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
@@ -524,7 +529,7 @@ nav {
     padding: 20px;
 }
 #contact {
-    background-color:var(--container-bg);
+    background-color:var(--special-bg);
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
