@@ -207,6 +207,7 @@ h1, h2, h3 {
 }
 
 .btn {
+    margin-top:10px;
     display: inline-block;
     padding: 12px 30px;
     background-color: var(--secondary-color);
@@ -472,7 +473,7 @@ nav {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px;;
 }
 
 .form-group {
