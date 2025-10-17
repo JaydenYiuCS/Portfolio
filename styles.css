@@ -19,6 +19,7 @@
     --accent-color: #e74c3c;
     --text-color: #ecf0f1;
     --light-bg: #2c3e50;
+    --container-bg: #13385f;
     --special-bg: #3b4a5a;
     --card-bg: #355575;
     --border-color: #4a6278;
@@ -88,7 +89,10 @@
     border-color: var(--border-color);
     background: var(--card-bg);
 }
-
+[data-theme="dark"] .goals-content {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
 [data-theme="dark"] .skills-grid {
     background: var(--card-bg);
     border-color: var(--border-color);
@@ -304,6 +308,10 @@ nav {
     text-align: center;
     padding: 150px 0 100px;
     margin-top: 70px;
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero h1 {
@@ -325,12 +333,16 @@ nav {
 
 #about {
     background-color: var(--light-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .about-text {
@@ -342,6 +354,9 @@ nav {
     background-color: #f0f0f0;
 }
 .about-text p {
+    align-content:center;
+    padding-left:2px;
+    padding-right:2px;
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
@@ -370,6 +385,54 @@ nav {
     margin: 0 auto;
     color : #000;
 }
+#goals {
+    background-color: var(--container-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goals-content {
+    border: 2px solid #919191;
+    border-radius: 20px; /* This will work now with padding */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 30px; /* This creates space inside the border */
+    background: #ddd; /* Makes border-radius visible */
+    margin: 20px 0;
+    margin-left: 20px;
+    margin-right:20px;
+}
+
+.goal-title{
+    padding-top: 20px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    display: flex; 
+    align-items: justify; 
+    text-align: center;
+    justify-content: center;
+    padding-left:5px;
+    padding-right:5px; 
+    color: #ffffff; 
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#skills {
+    padding: 60px 0;
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--container-bg);
+}
+
+#skills .container {
+    padding: 0 20px;
+}
+
 .skills-grid {
     border: 2px solid #919191;
     border-radius: 20px; /* This will work now with padding */
@@ -378,7 +441,9 @@ nav {
     gap: 30px;
     padding: 30px; /* This creates space inside the border */
     background: #ddd; /* Makes border-radius visible */
-    margin: 20px 0; /* Optional: space around the skills section */
+    margin: 20px 0;
+    margin-left: 20px;
+    margin-right:20px;
 }
 .skill-title{
     padding-top: 20px;
@@ -401,6 +466,7 @@ nav {
 .item li{
     font-size:1.3rem;
     display:flex;
+    text-align: left;
 }
 
 .item h3 {
@@ -426,18 +492,14 @@ nav {
     border-bottom: none;
 }
 
-/* Optional: Add some spacing between sections */
-#skills {
-    padding: 60px 0;
-}
-
-#skills .container {
-    padding: 0 20px;
-}
 
 /* Projects Section */
 #projects {
-    background-color: var(--light-bg);
+    background-color: var(--special-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .projects-grid {
     display: flex;
@@ -461,7 +523,13 @@ nav {
 .project-info {
     padding: 20px;
 }
-
+#contact {
+    background-color:var(--container-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Contact Section */
 .contact-content {
     display: grid;
