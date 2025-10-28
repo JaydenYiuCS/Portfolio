@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jayden Yiu - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/icon.jpg">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Jayden Yiu</div>
-            <ul class="nav-links">
+            <div class="logo" style = "font-size: 1.67rem;">Jayden Yiu</div>
+            <ul class="nav-links" style = "gap: 20px;
+                                            font-size: 1.3rem; background-color: var(--special-bg); border-radius:20px; max-width: fit-content; 
+                                            padding-left: 40px; padding-right: 40px;">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#goals">Goals</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#references">References</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
@@ -37,7 +40,7 @@
     </header>
 
     <!-- Add scroll-section class to all sections with alternating directions -->
-    <section id="home" class="hero scroll-section">
+    <section id="home" class ="hero scroll-section">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Jayden Yiu</span></h1>
             <p>Grade 10 Student at UHS who enjoys participating and learning in the STEM field</p>
@@ -65,12 +68,15 @@
                  </div>
                 <div class="about-image">
                     <img src="./assets/picture.jpeg"class = "portfolio-image">
-                    <a href="assets/resume.pdf" class="btn" download="Jayden_Yiu_Resume.pdf">Download Resume</a>
+                    <div style = "gap: 40px;" >
+                        <a href="assets/resume.pdf" class="btn" download="Jayden_Yiu_Resume.pdf" style = "width: 400px;">Download Resume</a>
+                        <a href="assets/JaydenYiu_CoverLetter.pdf" class="btn" download="Jayden_Yiu_Cover_Letter.pdf" style = "width: 400px;">Download Cover Letter</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
-    
     <section id="goals" class="scroll-section">
         <div class="container">
             <h2>My Goals</h2>
@@ -175,7 +181,37 @@
                 </div>
                 <div class="item">
                     <div class ="goal-title">
+                        <h3>Part Time Job</h3>
+                    </div>
+                    <ul>
+                        <li>Enhance my programming skills by learning new languages and frameworks</li>
+                        <li>Participate in coding competitions to challenge myself and improve problem-solving abilities.</li>
+                        <li>Contribute to open-source projects to gain real-world experience and collaborate with other developers.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class ="goal-title">
                         <h3>Future Career</h3>
+                    </div>
+                    <ul>
+                        <li>Enhance my programming skills by learning new languages and frameworks</li>
+                        <li>Participate in coding competitions to challenge myself and improve problem-solving abilities.</li>
+                        <li>Contribute to open-source projects to gain real-world experience and collaborate with other developers.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class ="goal-title">
+                        <h3>Personal</h3>
+                    </div>
+                    <ul>
+                        <li>Enhance my programming skills by learning new languages and frameworks</li>
+                        <li>Participate in coding competitions to challenge myself and improve problem-solving abilities.</li>
+                        <li>Contribute to open-source projects to gain real-world experience and collaborate with other developers.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class ="goal-title">
+                        <h3>Financial</h3>
                     </div>
                     <ul>
                         <li>Enhance my programming skills by learning new languages and frameworks</li>
@@ -246,6 +282,8 @@
                     <p>A game made for UHS Computer Science club, Intro to Java</p>
                     <div class="project-tags">
                         <span class="tag">Java</span>
+                        <span class="tag">Terminal</span>
+                        <span class="tag">Intellij Idea</span>
                     </div>
                     <a href="https://github.com/deathslayer5-dev/CSClub" class="btn" target="_blank">View Code</a>
                 </div>
@@ -283,7 +321,24 @@
             </div>
         </div>
     </section>
-
+    <section id="references" class="scroll-section">
+        <div class = container>
+            <div class = title>
+                <h2>References</h2>
+            </div>
+            
+            <div class="referenceInfo">
+                <h3>Jarrod Hoogendam</h3>
+                <h4>Coledale PS</h4>
+                <a href="mailto:jarrod.hoogendam@gapps.yrdsb.ca">jarrod.hoogendam@gapps.yrdsb.ca</a>
+            </div>
+            <div class="referenceInfo">
+                <h3>Sarah Arnott</h3>
+                <h4>Flato Markham Theatre Camps</h4>
+                <a href="mailto:SArnott@markham.ca">SArnott@markham.ca</a>
+            </div>
+        </div>
+    </section>
     <section id="contact" class="scroll-section right">
         <div class="container">
             <h2>Contact Me</h2>

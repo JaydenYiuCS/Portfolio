@@ -531,8 +531,55 @@ nav {
 .project-info {
     padding: 20px;
 }
-#contact {
+#references{
     background-color:var(--special-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* make the container show title full-width, then two references side-by-side */
+#references .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.title {
+    flex-basis: 100%;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%; /* override the global fit-content */
+}
+/* two-column layout for references; will wrap on small screens */
+.referenceInfo{
+    text-align: jus;
+    background-color: var(--light-bg);
+    border: 2px solid #919191;
+    border-radius:20px;
+    padding: 15px;
+    margin: 0;
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+    min-width: 260px;
+    max-width: none;
+}
+.referenceInfo h3{
+    font-size:1.4rem;
+}
+.referenceInfo h4{
+    font-size:1.2rem;
+}
+.referenceInfo a{
+    font-size:1.2rem;
+    color: var(--secondary-color);
+}
+#contact {
+    background-color:var(--container-bg);
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
