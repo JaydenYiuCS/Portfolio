@@ -227,7 +227,7 @@ h1, h2, h3 {
 }
 
 .btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -542,7 +542,7 @@ nav {
 #references .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 7px;
     align-items: flex-start;
     justify-content: space-between;
     padding: 20px;
@@ -557,7 +557,7 @@ nav {
 }
 /* two-column layout for references; will wrap on small screens */
 .referenceInfo{
-    text-align: jus;
+    text-align: justify;
     background-color: var(--light-bg);
     border: 2px solid #919191;
     border-radius:20px;
@@ -621,6 +621,16 @@ nav {
     opacity: 0;
     transform: translateX(-100px);
     transition: all 0.8s ease;
+}
+.scroll-section.up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s ease;
+}
+.scroll-section.down {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.4s ease;
 }
 
 .scroll-section.right {
@@ -690,6 +700,13 @@ footer {
     color: white;
     text-align: center;
     padding: 30px 0;
+    max-height: fit-content;
+}
+footer .container{
+    font-family:'Courier New', Courier, monospace;
+    max-height: fit-content;
+    font-size:1.2rem;
+    border: none;
 }
 .project-tags {
     display: flex;
@@ -762,7 +779,7 @@ footer {
     }
 
     .btn-secondary:hover {
-        background: var(--secondary-color);
+        background: var(--primary-color);
         color: white;
     }
 
