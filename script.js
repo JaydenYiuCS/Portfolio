@@ -106,3 +106,17 @@ function initScrollAnimations() {
         observer.observe(section);
     });
 }
+function injectScrollbarHidingCSS() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .letter iframe {
+            overflow: hidden !important;
+        }
+        .letter::-webkit-scrollbar {
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+document.addEventListener('DOMContentLoaded', injectScrollbarHidingCSS);

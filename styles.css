@@ -261,7 +261,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    max-width: 1200px; /* Match your container width */
+    max-width: 1400px; /* Match your container width */
     margin: 0 auto; /* Center the nav */
     padding-left: 20px; /* Add left spacing */
     padding-right: 20px; /* Add right spacing */
@@ -335,7 +335,31 @@ nav {
     margin-left: auto;
     margin-right: auto;
 }
-
+#coverLetter{
+    background-color: var(--container-bg);
+    border-radius:20px;
+    max-width:1400px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.letter{
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    height: 1000px;
+    overflow: hidden; /* Change this to hidden */
+    position: relative;
+}
+.clean-pdf {
+    border-radius:5px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Force no scrollbars */
+    overflow: hidden !important;
+}
+.letter iframe body {
+    overflow: hidden !important;
+}
 #about {
     background-color: var(--special-bg);
     border-radius:20px;
@@ -762,7 +786,6 @@ footer .container{
     .nav-links.active {
         right: 0;
     }
-
     .about-content {
         flex-direction: column;
     }
