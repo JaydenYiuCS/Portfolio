@@ -727,13 +727,14 @@ html {
 }
 
 footer {
-    background: var(--primary-color);
+    background: var(--light-bg);
     color: white;
     text-align: center;
     padding: 30px 0;
     max-height: fit-content;
 }
 footer .container{
+    color: var(--text-color);
     font-family:'Courier New', Courier, monospace;
     max-height: fit-content;
     font-size:1.2rem;
