@@ -208,7 +208,9 @@ body {
 }
 
 section {
+    margin-bottom: 20px;
     padding: 80px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
 }
 
 h1, h2, h3 {
@@ -326,6 +328,7 @@ nav {
 
 .highlight {
     color: #f39c12;
+    text-shadow:2px 2px 4px #000;
 }
 
 .hero p {
@@ -719,6 +722,9 @@ html {
     .hero h1 {
         font-size: 2.5rem;
     }
+    .hero-content{
+        font-size: 1.3rem;
+    }
     .popup-content {
         padding: 30px 20px;
         max-width: 90%;
@@ -763,7 +769,72 @@ footer .container{
     border-radius:4px;
     color: #495057;
 }
+#sheep{
+    background-color:var(--special-bg);
+    border-radius:20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sheep-area {
+    position: relative;
+    height: 320px;
+    border: 2px dashed #919191;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(0,0,0,0.02));
+    overflow: hidden;
+    margin-top: 12px;
+}
 
+.sheep {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 160ms ease;
+    pointer-events: auto;
+}
+
+.sheep:hover {
+    transform: translateY(-6px);
+}
+
+.smoke {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    pointer-events: none;
+    opacity: 1;
+    animation: sheep-smoke 700ms ease forwards;
+}
+
+@keyframes sheep-smoke {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-22px) scale(1.6); opacity: 0; }
+}
+
+.sheep.spawn-pop {
+    transform: scale(0.2);
+    animation: pop-in 220ms ease forwards;
+}
+@keyframes pop-in {
+    to { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    .sheep-area { height: 240px; }
+    .sheep { width: 52px; height: 52px; font-size:1.6rem; }
+    .smoke { width: 52px; height: 52px; font-size:1.4rem; }
+}
 
 @media (max-width: 768px) {
     .hamburger {
@@ -798,10 +869,6 @@ footer .container{
     .hero h1 {
         font-size: 2.5rem;
     }
-    /* Project Tags */
-    /* If you want to keep the HTML with spaces in class attributes */
-    
-    /* Secondary Button */
     .btn-secondary {
         background: transparent;
         border: 2px solid var(--secondary-color);

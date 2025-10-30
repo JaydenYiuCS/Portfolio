@@ -43,11 +43,11 @@
     <section id="home" class ="hero scroll-section">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Jayden Yiu</span></h1>
-            <p>Grade 10 Student at UHS who enjoys participating and learning in the STEM field</p>
+            <p style = "font-size:1.3rem;">Grade 10 Student at UHS who enjoys participating and learning in the STEM field</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
-    <section id="about" class="scroll-section">
+    <section id="about" class="scroll-section right">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
@@ -542,6 +542,22 @@
         </div>
         </div>
     </section>
+    <section id="sheep" class="scroll-section">
+    <div class="container">
+        <h2>Sheep Game</h2>
+
+        <div class="sheep-controls" style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <button id="spawnBtn" class="btn btn-secondary">Spawn 3 Sheep</button>
+            <button id="resetBtn" class="btn">Reset</button>
+            <div class="sheep-counter" style="margin-left:auto;font-weight:600;">
+                Sheep clicked: <span id="sheepCount">0</span>
+            </div>
+        </div>
+
+        <div id="sheepArea" class="sheep-area" aria-label="Sheep game area" role="application"></div>
+        <p style="font-size:0.9rem;margin-top:8px;color:var(--text-color);">Click a sheep (🐑) to turn it into smoke (💨). New sheep will spawn automatically.</p>
+    </div>
+</section>
     <footer class = "scroll-section up">
         <div class="container">
             <p>Last Edited on October, 31<sup>st</sup>, 2025 by Jayden Yiu.</p>

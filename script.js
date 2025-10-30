@@ -106,17 +106,97 @@ function initScrollAnimations() {
         observer.observe(section);
     });
 }
-function injectScrollbarHidingCSS() {
-    const style = document.createElement('style');
-    style.textContent = `
-        .letter iframe {
-            overflow: hidden !important;
-        }
-        .letter::-webkit-scrollbar {
-            display: none !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
 
-document.addEventListener('DOMContentLoaded', injectScrollbarHidingCSS);
+/* Sheep game script */
+(function(){
+    const area = document.getElementById('sheepArea');
+    const countEl = document.getElementById('sheepCount');
+    const spawnBtn = document.getElementById('spawnBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    if (!area) return;
+
+    let clicked = 0;
+    let idCounter = 0;
+
+    function updateCounter() {
+        countEl.textContent = String(clicked);
+    }
+
+    function randomPos(size=64) {
+        const rect = area.getBoundingClientRect();
+        const padding = 8;
+        const maxX = Math.max(0, rect.width - size - padding);
+        const maxY = Math.max(0, rect.height - size - padding);
+        const x = Math.floor(Math.random() * maxX) + padding;
+        const y = Math.floor(Math.random() * maxY) + padding;
+        return { x, y };
+    }
+
+    function createSheep(animate=true) {
+        const s = document.createElement('div');
+        s.className = 'sheep';
+        s.dataset.sheepId = String(++idCounter);
+        s.innerText = '🐑';
+        const pos = randomPos();
+        s.style.left = pos.x + 'px';
+        s.style.top = pos.y + 'px';
+        if (animate) s.classList.add('spawn-pop');
+        area.appendChild(s);
+        // remove the spawn-pop class after animation so hover works normally
+        setTimeout(()=> s.classList.remove('spawn-pop'), 300);
+        return s;
+    }
+
+    function spawnMany(n=1) {
+        for (let i=0;i<n;i++) createSheep();
+    }
+
+    function handleSheepClick(sheepEl) {
+        // create smoke at same position
+        const smoke = document.createElement('div');
+        smoke.className = 'smoke';
+        smoke.innerText = '💨';
+        smoke.style.left = sheepEl.style.left;
+        smoke.style.top = sheepEl.style.top;
+        area.appendChild(smoke);
+
+        // remove sheep
+        sheepEl.remove();
+
+        // increment counter
+        clicked++;
+        updateCounter();
+
+        // remove smoke after animation and spawn a replacement
+        setTimeout(()=> {
+            smoke.remove();
+            // spawn one new sheep to keep game active
+            createSheep();
+        }, 700);
+    }
+
+    // event delegation for clicks inside area
+    area.addEventListener('click', (ev)=>{
+        const target = ev.target;
+        if (target.classList.contains('sheep')) {
+            handleSheepClick(target);
+        }
+    });
+
+    // controls
+    spawnBtn && spawnBtn.addEventListener('click', ()=> spawnMany(3));
+    resetBtn && resetBtn.addEventListener('click', ()=>{
+        // clear area
+        area.querySelectorAll('.sheep, .smoke').forEach(n=>n.remove());
+        clicked = 0;
+        updateCounter();
+        // spawn a starter set
+        spawnMany(5);
+    });
+
+    // initial spawn
+    spawnMany(15);
+    updateCounter();
+
+})();
