@@ -84,7 +84,7 @@
 }
 
 [data-theme="dark"] #about {
-    background-color: var(--special-bg);
+    background-color: var(--container-bg);
 }
 
 [data-theme="dark"] #goals {
@@ -336,7 +336,7 @@ nav {
     margin-right: auto;
 }
 #coverLetter{
-    background-color: var(--container-bg);
+    background-color: var(--special-bg);
     border-radius:20px;
     max-width:1400px;
     margin-left:auto;
@@ -361,7 +361,7 @@ nav {
     overflow: hidden !important;
 }
 #about {
-    background-color: var(--special-bg);
+    background-color: var(--container-bg);
     border-radius:20px;
     max-width: 1400px;
     margin-left: auto;
@@ -422,7 +422,7 @@ nav {
     margin-right: auto;
 }
 #goals .container{
-    height: 700px;
+    height: 900px;
     overflow-y:scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
